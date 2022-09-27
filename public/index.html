@@ -17,13 +17,9 @@
         socket.on('disconnect', function() {
             console.log('Conexion Perdida')
         });
-
-        socket.emit('message', {
-            nombre: 'Diego Hoyos'
-        });
-
-        socket.on('message', function(payload) {
-            console.log('Escuchando', payload.admin)
+        socket.on('active-bands', function( bands ) {
+            console.clear();
+            console.table(bands);
         });
     </script>
 </body>
